@@ -1,10 +1,29 @@
-/* Tipографія */
+/* Обнуляючі стилі */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body {
+	line-height: 1;
 	font-family: 'Open Sans', sans-serif;
 	color: #333;
 	background-color: #f4edde;
 }
 
+ol,
+ul {
+	list-style: none;
+}
+
+/* Tipографія */
 h1,
 h2,
 h3 {
@@ -45,7 +64,7 @@ footer p {
 /* Header */
 header {
 	background-color: #f4edde;
-	padding: 10px 0;
+	padding: 0;
 	height: 80px;
 	position: sticky;
 	top: 0;
@@ -64,7 +83,8 @@ header .logo img {
 	width: 100px;
 }
 
-.lang-switcher {
+.lang-switcher,
+.interaction {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -113,7 +133,16 @@ nav.main-nav ul li a {
 }
 
 nav.main-nav ul li a:hover {
+	text-decoration: underline;
+	transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+nav.main-nav ul li a.active {
 	color: #B22222;
+}
+
+nav.main-nav ul li a.active:hover {
+	text-decoration: none;
 }
 
 /* Секції */
@@ -121,7 +150,7 @@ nav.main-nav ul li a:hover {
 	background-size: cover;
 	height: 400px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 	text-align: center;
 	color: #fff;
@@ -130,7 +159,7 @@ nav.main-nav ul li a:hover {
 #portada .btn {
 	background-color: #FFC300;
 	color: #B22222;
-	padding: 0 20px;
+	padding: 15px 20px;
 	text-decoration: none;
 	border-radius: 5px;
 	transition: background-color 0.3s;
@@ -139,6 +168,7 @@ nav.main-nav ul li a:hover {
 #portada .btn:hover {
 	background-color: #B22222;
 	color: #fff;
+	transition: background-color 0.3s;
 }
 
 .section-container {
@@ -150,19 +180,21 @@ nav.main-nav ul li a:hover {
 }
 
 .fullscreen-section {
-	min-height: calc(100vh - 100px);
+	min-height: calc(100vh - 80px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	position: relative;
 	text-align: center;
+	scroll-margin-top: 80px;
+	/* Moved from .fullscreen-section to avoid duplicates */
 }
 
 .section-banner,
 .section-image {
 	width: 100%;
-	height: 25vh;
+	height: 20vh;
 	object-fit: cover;
 	background-position: center;
 	background-size: cover;
@@ -171,12 +203,11 @@ nav.main-nav ul li a:hover {
 /* Текст секцій */
 .section-container h2,
 .section-container p {
-	text-align: center;
+	text-align: left;
 }
 
 .product-image {
 	width: 100%;
-	height: 100%;
 	max-width: 200px;
 	border-radius: 8px;
 	margin-bottom: 10px;
@@ -193,50 +224,23 @@ nav.main-nav ul li a:hover {
 }
 
 .menu-items .item {
-	flex: 1 1 45%;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: #fff;
-	text-align: center;
-}
-
-.product-image {
-	width: 100%;
-	border-radius: 10px;
-	margin: 0 20px 0 0;
-}
-
-/* Медіа-запити */
-@media (max-width: 768px) {
-	.menu-items .item {
-		flex: 1 1 100%;
-	}
-}
-
-
-/* Стилі для карток товарів */
-.menu-items .item {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: row;
+	flex: 1 1 45%;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	overflow: hidden;
 	background-color: rgba(255, 255, 255, 0.8);
-	/* Напівпрозорий фон */
 	text-align: left;
-	/* Вирівнювання тексту ліворуч */
 	padding: 20px;
 	transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .menu-items .item:hover {
 	background-color: rgba(255, 255, 255, 1);
-	/* Підсвічування фону */
 	transform: scale(1.05);
-	/* Збільшення картки */
 }
 
 .menu-items .item img {
@@ -245,9 +249,7 @@ nav.main-nav ul li a:hover {
 	height: 133px;
 	object-fit: cover;
 	margin-right: 20px;
-	/* Відступ між зображенням та текстом */
 	border-radius: 0;
-	/* Без відступів між краєм картки і зображенням */
 }
 
 .menu-items .item h3 {
@@ -258,88 +260,20 @@ nav.main-nav ul li a:hover {
 .menu-items .item p {
 	font-size: 16px;
 	line-height: 1.4;
-	/* Зменшений міжрядковий інтервал для двох рядків тексту */
 	margin: 0;
 }
 
-/* Адаптація для мобільних пристроїв */
+/* Медіа-запити */
 @media (max-width: 768px) {
 	.menu-items .item {
+		flex: 1 1 100%;
 		flex-direction: column;
-		/* Вертикальне розташування для маленьких екранів */
 		text-align: center;
-		/* Центрування тексту */
 	}
 
 	.menu-items .item img {
 		margin-right: 0;
 		margin-bottom: 10px;
-		/* Відступ під зображенням для мобільних */
-	}
-}
-
-/* Стилі для карток товарів */
-.menu-items .item {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: row;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	overflow: hidden;
-	background-color: rgba(255, 255, 255, 0.8);
-	/* Напівпрозорий фон */
-	text-align: left;
-	/* Вирівнювання тексту ліворуч */
-	padding: 20px;
-	transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.menu-items .item:hover {
-	background-color: rgba(255, 255, 255, 1);
-	/* Підсвічування фону */
-	transform: scale(1.05);
-	/* Збільшення картки */
-}
-
-.menu-items .item img {
-	margin: 0;
-	flex-shrink: 0;
-	width: 200px;
-	height: 133px;
-	object-fit: cover;
-	margin-right: 20px;
-	/* Відступ між зображенням та текстом */
-	border-radius: 0;
-	/* Без відступів між краєм картки і зображенням */
-}
-
-.menu-items .item h3 {
-	font-size: 20px;
-}
-
-.menu-items .item p {
-	font-size: 16px;
-	line-height: 1.4;
-	/* Зменшений міжрядковий інтервал для двох рядків тексту */
-	margin: 0;
-}
-
-
-
-/* Адаптація для мобільних пристроїв */
-@media (max-width: 768px) {
-	.menu-items .item {
-		flex-direction: column;
-		/* Вертикальне розташування для маленьких екранів */
-		text-align: center;
-		/* Центрування тексту */
-	}
-
-	.menu-items .item img {
-		margin-right: 0;
-		margin-bottom: 10px;
-		/* Відступ під зображенням для мобільних */
 	}
 }
 
@@ -357,50 +291,31 @@ nav.main-nav ul li a:hover {
 
 .amination-wrapper {
 	width: 100%;
-	display: flex;
+	display: inline-flex;
 	justify-content: space-evenly;
+	align-items: center;
 }
 
-const images=document.querySelectorAll('.background-image');
+.section-container {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
 
-images.forEach((image, index)=> {
-		// Випадкова початкова позиція
-		image.style.left=Math.random() * window.innerWidth + 'px';
-		image.style.top=Math.random() * window.innerHeight + 'px';
+.section-container h2 {
+	margin-top: 40px;
+}
 
-		let duration;
+.section-container .menu-items {
+	padding: 20px 0 60px;
+}
 
-		switch (index) {
-			case 0: duration=2000; // 2 секунди для першого зображення
-			break;
-			case 1: duration=2500; // 2.5 секунди для другого зображення
-			break;
-			case 2: duration=3000; // 3 секунди для третього зображення
-			break;
-		}
+.section-container .item {
+	max-width: 50%;
+}
 
-		// Анімація
-		setInterval(()=> {
-				image.style.transition=`transform $ {
-					duration
-				}
-
-				ms ease-in-out`;
-				image.style.transform='rotate(10deg) translateX(30px)'; // Поворот і переміщення вправо
-
-				setTimeout(()=> {
-						image.style.transform='rotate(-10deg) translateX(0px)'; // Поворот назад і переміщення вліво
-					}
-
-					, duration / 2); // Повернення на половині циклу
-
-				// Пауза перед наступним циклом
-				setTimeout(()=> {
-						image.style.transform='rotate(0deg)'; // Повернення до початкового положення
-					}
-
-					, duration);
-			}
-
-			, duration * 2); // Цикл повторюється з подвоєною тривалістю
-	});
+.section-banner {
+	opacity: 75%;
+}

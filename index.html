@@ -24,6 +24,8 @@
 			</div>
 			<nav class="main-nav">
 				<ul>
+					<li><a href="#portada" class="es">Inicio</a><a href="#portada" class="en" style="display: none;">Home</a>
+					</li>
 					<li><a href="#para-picar" class="es">Para Picar</a><a href="#para-picar" class="en"
 							style="display: none;">Starters</a></li>
 					<li><a href="#hamburguesas" class="es">Hamburguesas</a><a href="#hamburguesas" class="en"
@@ -36,29 +38,32 @@
 							style="display: none;">Contact</a></li>
 				</ul>
 			</nav>
-			<div class="lang-switcher">
-				<img src="img/EN.svg" alt="EN" class="language-icon current-lang-icon" data-lang="en">
-				<img src="img/Es.svg" alt="ES" class="language-icon lang-icon" data-lang="es" style="display: none;">
-				<img src="img/search-icon.svg" alt="Search" class="search-icon-img" height="30px">
+			<div class="interaction">
+				<div class="lang-switcher">
+					<img src="img/EN.svg" alt="EN" class="language-icon current-lang-icon" data-lang="en">
+					<img src="img/Es.svg" alt="ES" class="language-icon lang-icon" data-lang="es" style="display: none;">
+				</div>
+				<div class="search">
+					<img src="img/search-icon.svg" alt="Search" class="search-icon-img" height="30px">
+				</div>
 			</div>
 		</div>
 	</header>
 
 	<!-- Sección:  portada -->
 	<section id="portada" class="fullscreen-section">
-		<div class="section-image" style="background-image: url('images/slider-bg.svg');"></div>
 		<div class="section-container">
 			<div class="amination-wrapper">
-				<img src="img/burguer2.png" alt="Background Image 2" class="background-image" width="200">
-				<img src="img/burguer1.png" alt="Background Image 1" class="background-image" width="300" height="100%">
-				<img src="img/burguer3.png" alt="Background Image 3" class="background-image" width="200">
+				<img src="img/burguer1.png" alt="Background Image 2" class="background-image" width="250" height="200">
+				<img src="img/burguer2.png" alt="Background Image 1" class="background-image" width="250">
+				<img src="img/burguer3.png" alt="Background Image 3" class="background-image" width="250">
 			</div>
 			<h1 class="es">¡Las Mejores Hamburguesas Gourmet en Mazagón!</h1>
 			<h1 class="en" style="display: none;">The Best Gourmet Burgers in Mazagón!</h1>
 			<p class="es">Descubre nuestros platos únicos y ven a visitarnos</p>
 			<p class="en" style="display: none;">Discover our unique dishes and come visit us</p>
-			<a href="#hamburguesas" class="btn es">Ver Menú</a>
-			<a href="#hamburguesas" class="btn en" style="display: none;">See Menu</a>
+			<a href="#para-picar" class="btn es">Ver Menú</a>
+			<a href="#para-picar" class="btn en" style="display: none;">See Menu</a>
 		</div>
 	</section>
 
@@ -170,7 +175,7 @@
 			<div class="menu-items">
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/hamburguesa-classica.jpg" alt="Hamburguesa Clásica" class="product-image">
+						<img src="img/hamburguesas/hambClasica.jpg" alt="Hamburguesa Clásica" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Hamburguesa Clásica</h3>
@@ -181,7 +186,7 @@
 				</div>
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/hamburguesa-bbq.jpg" alt="Hamburguesa BBQ" class="product-image">
+						<img src="img/hamburguesas/hambBBQ.jpg" alt="Hamburguesa BBQ" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Hamburguesa BBQ</h3>
@@ -192,7 +197,7 @@
 				</div>
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/hamburguesa-vegana.jpg" alt="Hamburguesa Vegana" class="product-image">
+						<img src="img/hamburguesas/hambVegana.jpg" alt="Hamburguesa Vegana" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Hamburguesa Vegana</h3>
@@ -203,7 +208,7 @@
 				</div>
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/hamburguesa-picante.jpg" alt="Hamburguesa Picante" class="product-image">
+						<img src="img/hamburguesas/hambPicante.jpg" alt="Hamburguesa Picante" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Hamburguesa Picante</h3>
@@ -212,64 +217,102 @@
 						<p class="en" style="display: none;">Beef patty with spicy sauce, jalapeños, and cheese.</p>
 					</div>
 				</div>
+
+				<div class="item">
+					<div class="image-wrapper">
+						<img src="img/hamburguesas/hambHawaiana.jpg" alt="Hamburguesa Hawaiana" class="product-image">
+					</div>
+					<div class="body-wrapper">
+						<h3 class="es">Hamburguesa Hawaiana</h3>
+						<h3 class="en" style="display: none;">Hawaiian Burger</h3>
+						<p class="es">Carne de res con piña a la parrilla, jamón y queso suizo.</p>
+						<p class="en" style="display: none;">Beef patty with grilled pineapple, ham, and Swiss cheese.</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="image-wrapper">
+						<img src="img/hamburguesas/hambDoble.jpg" alt="Hamburguesa Doble" class="product-image">
+					</div>
+					<div class="body-wrapper">
+						<h3 class="es">Hamburguesa Doble</h3>
+						<h3 class="en" style="display: none;">Double Burger</h3>
+						<p class="es">Doble carne de res, queso cheddar, lechuga y tomate.</p>
+						<p class="en" style="display: none;">Double beef patty, cheddar cheese, lettuce, and tomato.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
+
 	<!-- Sección: Bocadillos -->
 	<section id="bocadillos" class="fullscreen-section">
-		<img src="img/bocadillos.jpg" alt="Bocadillos Imagen" class="section-banner">
+		<img src="img/bocadillos.png" alt="Bocadillos Imagen" class="section-banner">
 		<div class="section-container">
 			<h2 class="es">Bocadillos</h2>
 			<h2 class="en" style="display: none;">Sandwiches</h2>
 			<div class="menu-items">
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/bocadillos/jamon.jpg" alt="Bocadillo de Jamón" class="product-image">
+						<img src="img/bocadillos/bocHamon.jpg" alt="Bocadillo de Jamón" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Bocadillo de Jamón</h3>
-						<h3 class="en" style="display: none;">Ham Sandwich</h3>
+						<h3 class="en" style="display: none;">Ham Sub-Sandwich</h3>
 						<p class="es">Pan crujiente con jamón ibérico y tomate rallado.</p>
 						<p class="en" style="display: none;">Crispy bread with Iberian ham and grated tomato.</p>
 					</div>
 				</div>
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/bocadillos/queso.jpg" alt="Bocadillo de Queso" class="product-image">
+						<img src="img/bocadillos/bocQueso.jpg" alt="Bocadillo de Queso" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Bocadillo de Queso</h3>
-						<h3 class="en" style="display: none;">Cheese Sandwich</h3>
+						<h3 class="en" style="display: none;">Cheese Sub-Sandwich</h3>
 						<p class="es">Pan crujiente con queso manchego y aceite de oliva.</p>
 						<p class="en" style="display: none;">Crispy bread with Manchego cheese and olive oil.</p>
 					</div>
 				</div>
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/bocadillos/tortilla.jpg" alt="Bocadillo de Tortilla" class="product-image">
+						<img src="img/bocadillos/bocTortilla.jpg" alt="Bocadillo de Tortilla" class="product-image">
 					</div>
 					<div class="body-wrapper">
 						<h3 class="es">Bocadillo de Tortilla</h3>
-						<h3 class="en" style="display: none;">Omelette Sandwich</h3>
+						<h3 class="en" style="display: none;">Omelette Sub-Sandwich</h3>
 						<p class="es">Pan con tortilla de patatas y cebolla caramelizada.</p>
 						<p class="en" style="display: none;">Bread with potato omelette and caramelized onions.</p>
 					</div>
 				</div>
+
 				<div class="item">
 					<div class="image-wrapper">
-						<img src="img/bocadillos/atun.jpg" alt="Bocadillo de Atún" class="product-image">
+						<img src="img/bocadillos/bocSanPollo.jpg" alt="Bocadillo de Pollo" class="product-image">
 					</div>
 					<div class="body-wrapper">
-						<h3 class="es">Bocadillo de Atún</h3>
-						<h3 class="en" style="display: none;">Tuna Sandwich</h3>
-						<p class="es">Pan crujiente con atún, tomate y lechuga.</p>
-						<p class="en" style="display: none;">Crispy bread with tuna, tomato, and lettuce.</p>
+						<h3 class="es">Sandwich de Pollo</h3>
+						<h3 class="en" style="display: none;">Chicken Sandwich</h3>
+						<p class="es">Pan con pechuga de pollo asado, tomate y mayonesa.</p>
+						<p class="en" style="display: none;">Bread with roasted chicken breast, tomato, and mayonnaise.</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="image-wrapper">
+						<img src="img/bocadillos/bocSanVegetal.jpg" alt="Bocadillo Vegetal" class="product-image">
+					</div>
+					<div class="body-wrapper">
+						<h3 class="es">Sandwich Vegetal</h3>
+						<h3 class="en" style="display: none;">Vegetable Sandwich</h3>
+						<p class="es">Pan integral con aguacate, espinacas y hummus.</p>
+						<p class="en" style="display: none;">Whole-grain bread with avocado, spinach, and hummus.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+
 	<!-- Sección: Postres -->
 	<section id="postres" class="fullscreen-section">
 		<img src="img/postres.jpg" alt="Postres Imagen" class="section-banner">
@@ -308,17 +351,6 @@
 						<h3 class="en" style="display: none;">Chocolate Fondant</h3>
 						<p class="es">Bizcocho caliente de chocolate con interior fundido.</p>
 						<p class="en" style="display: none;">Warm chocolate cake with molten center.</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="image-wrapper">
-						<img src="img/postres/helado.jpg" alt="Helado Artesanal" class="product-image">
-					</div>
-					<div class="body-wrapper">
-						<h3 class="es">Helado Artesanal</h3>
-						<h3 class="en" style="display: none;">Artisanal Ice Cream</h3>
-						<p class="es">Variedad de helados artesanales.</p>
-						<p class="en" style="display: none;">Variety of artisanal ice creams.</p>
 					</div>
 				</div>
 			</div>

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   langSwitcher.addEventListener("click", function () {
     // Toggle icons' rotation animation
     currentLangIcon.classList.toggle("up");
-    otherLangIcon.style.display = "block";
     otherLangIcon.classList.toggle("down");
 
     // Swap icons after animation delay
@@ -51,20 +50,20 @@ images.forEach((image, index) => {
   let duration;
   switch (index) {
     case 0:
-      duration = 500; // 2 секунди для першого зображення
+      duration = 600;
       break;
     case 1:
-      duration = 600; // 2.5 секунди для другого зображення
+      duration = 500;
       break;
     case 2:
-      duration = 700; // 3 секунди для третього зображення
+      duration = 700;
       break;
   }
 
   // Анімація
   setInterval(() => {
     image.style.transition = `transform ${duration}ms ease-in-out`;
-    image.style.transform = "rotate(10deg) translateX(30px)"; // Поворот і переміщення вправо
+    image.style.transform = "rotate(10deg) translateX(30px) "; // Поворот і переміщення вправо
 
     setTimeout(() => {
       image.style.transform = "rotate(-10deg) translateX(0px)"; // Поворот назад і переміщення вліво
@@ -76,3 +75,33 @@ images.forEach((image, index) => {
     }, duration);
   }, duration * 2); // Цикл повторюється з подвоєною тривалістю
 });
+
+// Отримуємо всі посилання з меню
+const menuLinks = document.querySelectorAll("nav.main-nav ul li a");
+
+// Функція для оновлення активного пункту
+function setActiveLink() {
+  let fromTop = window.scrollY + document.querySelector("header").offsetHeight; // Висота хедера
+
+  menuLinks.forEach((link) => {
+    // Видаляємо клас active з усіх посилань
+    link.classList.remove("active");
+
+    // Отримуємо цільове місце для кожного посилання (id секції)
+    let section = document.querySelector(link.hash);
+
+    // Додаємо клас active, якщо секція у видимій області
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("active");
+    }
+  });
+}
+
+// Викликаємо функцію під час прокрутки
+window.addEventListener("scroll", setActiveLink);
+
+// Викликаємо функцію при завантаженні сторінки
+document.addEventListener("DOMContentLoaded", setActiveLink);
